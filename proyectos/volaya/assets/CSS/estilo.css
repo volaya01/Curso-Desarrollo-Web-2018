@@ -1,0 +1,140 @@
+/*importar fuente personalizada*/
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+/*Normalizar documento*/
+*{
+    margin: 0; padding:0; box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+/*Definicion de css variables*/
+:root {
+    /*variables de colores principales*/
+    --c-primario: #77A756;
+    --c-secundario: #335941;
+    --c-terciario: #4F8C6C;
+    --c-claro: #99BE7F;
+    --c-oscuro: #222D3F;
+
+    /*Dimension del iframe*/
+    --iframe-width: 650px;
+    --iframe-heigth: 450px;
+}
+
+/*=====>Layout de la aplicacion con CSS grid <========*/
+.contenedor{
+    background: var(--c-oscuro);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr 50px; 
+    overflow-x: hidden;
+
+}
+.header{
+    background: var(--c-terciario);
+    grid-column: 1/2;
+    grid-row: 1/2;
+    
+}
+.menu{
+    background: var(--c-primario);
+    display: none;
+
+}
+.main{
+    background: var(--c-secundario);
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.footer{
+    background: var(--c-terciario);
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+/*=============*/
+
+/*Estilos para el contenido principal*/
+.main{
+    padding: 1em;
+}
+.main .instruccion {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 5px;
+    background: var(--c-oscuro);
+
+}
+.main .instruccion p{
+    margin:0; padding: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main.contenedor-iframe{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 0.5em;
+    text-align: center;
+    overflow-x: auto;
+}
+.main .contenedor-iframe iframe{
+    width: var(--iframe-width);
+    height: var(--iframe-heigth);
+}
+
+/*Estilos para la barra de navegacion*/
+.nav *{
+    color: var(--c-oscuro);
+}
+.nav .nav-links li{
+text-align: center;
+margin: 0 auto;
+transition: 0.5s;
+}
+.nav .nav-links li:hover {
+    background: var(--c-primario);
+}
+
+.nav .nav-links li a{
+    display: block;
+    padding: 5px;
+    font-weight: bold;
+
+}
+
+.nav .menu-open{
+    display: inline-block;
+    margin: 5 px auto 5px 15px;
+    
+}
+.nav{
+    position: relative;
+}
+
+.nav .nav-toggle{
+position: absolute;
+top: 5px;
+right:15px ;
+}
+
+/*======>UTILIDADES<=========*/
+/* Utilidad: Normalizar listas y links */
+.lista-links {
+    list-style:none;
+    margin:0;
+    padding: 0;
+}
+.lista-links li a {
+    text-decoration: none;
+
+}
+/*Utilidad:Iconos grandes */
+.icono-grande{
+    font-size: 25px;
+    cursor: pointer;
+}
