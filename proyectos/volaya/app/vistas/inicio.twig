@@ -1,0 +1,22 @@
+{% extends "plantillas/base.twig" %}
+
+{% block titulo %}
+        <i>nicio del repositorio</i>
+{% endblock %}
+
+{% block styleheets %}
+     {{ parent() }}
+     <link rel="styleheet" href="{{ constant('APP_URL') }}assets/css/inicio.css">
+{% endblock %}
+
+{% block contenido %}
+    <div class="contenedor">
+        <main class="main">
+            <div class="banner">
+                <h1 class="titulo">Repositorio de act</h1>
+                <a href="#" class="link kink-aplicacion">Abrir aplicaion</a>
+                <a href="#" class="link link-admin">Administrar</a>
+            </div>
+        </main>
+    </div>
+{% endblock %}
